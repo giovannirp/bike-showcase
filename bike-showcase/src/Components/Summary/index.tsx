@@ -1,7 +1,22 @@
 import { CurrencyDollar, ArrowCircleDown, ArrowCircleUp } from "phosphor-react";
 import { SummaryCard, SummaryContainer, TitleSummary } from "./styles";
+import { useEffect, useState } from "react";
 
 export function Summary() {
+  const [trasactions, setTransactions] = useState();
+
+  async function loadTransactions() {
+    const response = await fetch('http://localhost:3000/transactions')
+    const data = await response.json();
+
+    console.log(data);
+
+    setTransactions(data);
+  }
+
+  useEffect(() => {
+    loadTransactions()
+  }, [])
   return (
     <section>
       <TitleSummary>Entradas e saidas</TitleSummary>
