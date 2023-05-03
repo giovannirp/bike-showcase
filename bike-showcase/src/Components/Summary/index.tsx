@@ -1,22 +1,12 @@
 import { CurrencyDollar, ArrowCircleDown, ArrowCircleUp } from "phosphor-react";
 import { SummaryCard, SummaryContainer, TitleSummary } from "./styles";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { TransactionsContext } from "../../contexts/TransactionsContext";
 
 export function Summary() {
-  const [trasactions, setTransactions] = useState();
+  const { transactions } = useContext(TransactionsContext)
+  console.log("aqui é transition",transactions);
 
-  async function loadTransactions() {
-    const response = await fetch('http://localhost:3000/transactions')
-    const data = await response.json();
-
-    console.log(data);
-
-    setTransactions(data);
-  }
-
-  useEffect(() => {
-    loadTransactions()
-  }, [])
   return (
     <section>
       <TitleSummary>Entradas e saidas</TitleSummary>
@@ -45,6 +35,7 @@ export function Summary() {
           </header>
           <strong>R$ 17.400,00</strong>
         </SummaryCard>
+        
       </SummaryContainer>
     </section>
   );
