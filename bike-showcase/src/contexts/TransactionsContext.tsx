@@ -3,7 +3,7 @@ import { Children, ReactNode, createContext, useEffect, useState } from "react";
 interface Transactions {
   id: number;
   description: string;
-  type: "income" | "outcome";
+  type: 'income' | 'outcome';
   price: number;
   category: string;
   createAt: string;
