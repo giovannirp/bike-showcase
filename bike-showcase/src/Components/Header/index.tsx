@@ -9,7 +9,7 @@ export function Header() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/about">Transação</Link>
+          <Link to="/trasations">Transação</Link>
         </li>
         <li>
           <Link to="/about">About</Link>
