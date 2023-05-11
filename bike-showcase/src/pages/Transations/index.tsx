@@ -24,7 +24,6 @@ export function Transations() {
               <tr key={listProduct.id}>
                 <td>{listProduct.description}</td>
                 <td>
-                  {/* {listProduct.price} */}
                   <PriceHighlight variant={listProduct.type}>
                     {priceFormatter.format(listProduct.price)}
                   </PriceHighlight>
