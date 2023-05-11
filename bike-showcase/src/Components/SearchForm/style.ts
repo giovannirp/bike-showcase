@@ -32,7 +32,6 @@ export const SearchContainer = styled.section`
     border-radius: 6px;
     color: ${(props) => props.theme["green-700"]};
     font-weight: bold;
-
     display: flex;
     align-items: center;
     justify-content: center;  
