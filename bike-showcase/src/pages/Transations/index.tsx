@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { ContainerTransactions, TrasactionsTable, TrasictionsHead } from "./style";
+import { ContainerTransactions, PriceHighlight, TrasactionsTable, TrasictionsHead } from "./style";
 import { TransactionsContext } from "../../contexts/TransactionsContext";
-import { dataFormater } from "../../ultis/formatters";
+import { dataFormater, priceFormatter } from "../../ultis/formatters";
 
 export function Transations() {
   const { transactions } = useContext(TransactionsContext)
@@ -23,7 +23,12 @@ export function Transations() {
             return (
               <tr key={listProduct.id}>
                 <td>{listProduct.description}</td>
-                <td>{listProduct.price}</td>
+                <td>
+                  {/* {listProduct.price} */}
+                  <PriceHighlight variant={listProduct.type}>
+                    {priceFormatter.format(listProduct.price)}
+                  </PriceHighlight>
+                </td>
                 <td>{listProduct.category}</td>
                 <td>{dataFormater.format(new Date(listProduct.createdAt))}</td>
               </tr>

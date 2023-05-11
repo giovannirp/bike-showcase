@@ -42,3 +42,11 @@ export const TrasictionsHead = styled.thead`
     color: ${(props) => props.theme.white}!important;
   }
 `;
+
+interface PriceHighlighProps {
+  variant: 'income' | 'outcome'
+}
+
+export const PriceHighlight = styled.span<PriceHighlighProps>`
+  color: ${(props) => props.variant === 'income' ? props.theme["green-300"] : props.theme["red-300"]};
+`;
