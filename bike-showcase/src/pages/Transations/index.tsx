@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { ContainerTransactions, PriceHighlight, TrasactionsTable, TrasictionsHead } from "./style";
 import { TransactionsContext } from "../../contexts/TransactionsContext";
 import { dataFormater, priceFormatter } from "../../ultis/formatters";
+import { SearchForm } from "../../Components/SearchForm";
 
 export function Transations() {
   const { transactions } = useContext(TransactionsContext)
@@ -9,6 +10,8 @@ export function Transations() {
   return (
     <ContainerTransactions>
       <h1>Bem vindo nas transições</h1>
+
+      <SearchForm />
       <TrasactionsTable>
         <TrasictionsHead>
           <tr>
