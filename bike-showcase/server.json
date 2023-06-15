@@ -23,6 +23,14 @@
       "category": "Educação",
       "price": 1980,
       "createdAt": "2023-04-26T19:43:46.072Z"
+    },
+    {
+      "id": 4,
+      "description": "Mac Donaldssss",
+      "type": "outcome",
+      "category": "Alimentação",
+      "price": 22,
+      "createdAt": "2023-04-26T19:43:46.072Z"
     }
   ]
 }
